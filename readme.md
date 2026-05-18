@@ -8,7 +8,7 @@
 
 2. Setup appropriate environment: `cp .env.example .env`
 
-3. Generate & push to database: `prisma generate && prisma db push`
+3. Generate & push to database: `bun prisma generate && bun prisma db push`
 
 ## Starting
 
