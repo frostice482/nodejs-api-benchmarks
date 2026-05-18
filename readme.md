@@ -12,4 +12,4 @@
 
 ## Starting
 
-- `bun start <framework>`, `framework` can be `express`, `fastify`, or `elysiajs`
+- `bun start <framework>`, `framework` can be `express`, `fastify`, `elysiajs`, or `nestjs`

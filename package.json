@@ -3,6 +3,9 @@
     "start": "bun src/start.js"
   },
   "dependencies": {
+    "@nestjs/common": "^11.1.21",
+    "@nestjs/core": "^11.1.21",
+    "@nestjs/platform-express": "^11.1.21",
     "@prisma/adapter-mariadb": "^7.8.0",
     "@prisma/client": "^7.8.0",
     "dotenv": "^17.4.2",
