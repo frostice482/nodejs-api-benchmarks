@@ -20,7 +20,10 @@ app.get('/check', () => '')
 
 app.get('/performance', () => stats(listentime))
 
-app.listen({ port: Number(process.env.PORT) }, () => {
+app.listen({
+	port: Number(process.env.PORT),
+	host: '0.0.0.0'
+}, () => {
 	listentime = performance.now()
 	log(listentime, 'Fastify', 'Listening on port', process.env.PORT)
 })
