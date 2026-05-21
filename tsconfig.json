@@ -4,7 +4,9 @@
 
 		"module": "esnext",
 		"moduleResolution": "bundler",
+		"resolveJsonModule": true,
 		"allowSyntheticDefaultImports": true,
+		"forceConsistentCasingInFileNames": true,
 
 		"target": "esnext",
 		"outDir": "dist",
@@ -19,7 +21,6 @@
 
 		"skipLibCheck": true,
 		"incremental": true,
-		"forceConsistentCasingInFileNames": true,
 		"strict": true
 
 	},
