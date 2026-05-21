@@ -1,4 +1,4 @@
-import { Body, Controller, Get, ParseIntPipe, Post, Query } from '@nestjs/common'
+import { Body, Controller, Get, HttpCode, ParseIntPipe, Post, Query, } from '@nestjs/common'
 import UserProvider from './provider';
 import type { UserCreateManyInput } from '../../../prisma/models';
 
@@ -11,6 +11,7 @@ export default class UserController {
 		return this.svc.getUsers(limit)
 	}
 
+	@HttpCode(200)
 	@Post('/users')
 	async addUsers(@Body() users: UserCreateManyInput[]) {
 		await this.svc.addUsers(users)
