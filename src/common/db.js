@@ -1,6 +1,7 @@
 import { PrismaMariaDb } from "@prisma/adapter-mariadb"
 import { PrismaClient } from "../prisma/client"
 import assert from "assert"
+import { log } from "./util"
 
 assert(process.env.DATABASE_HOST, 'DATABASE_HOST not defined')
 assert(process.env.DATABASE_USER, 'DATABASE_USER not defined')
@@ -16,9 +17,10 @@ const adapter = new PrismaMariaDb({
 })
 
 const db = new PrismaClient({ adapter: adapter })
+log(0, 'Prisma', 'Connecting')
 await db.$connect()
 
 export const dbconntime = performance.now()
-console.log(`Connected to database (in ${dbconntime.toFixed(1)}ms)`)
+log(dbconntime, 'Prisma', 'Connected')
 
 export default db

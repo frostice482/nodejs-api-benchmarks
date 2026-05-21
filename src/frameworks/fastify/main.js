@@ -1,6 +1,7 @@
 import fastify from 'fastify'
 import db from '../../common/db'
 import { stats } from '../../common/stats'
+import { log } from '../../common/util'
 
 const app = fastify()
 let listentime = 0
@@ -21,5 +22,5 @@ app.get('/performance', () => stats(listentime))
 
 app.listen({ port: Number(process.env.PORT) }, () => {
 	listentime = performance.now()
-	console.log(`[Fastify] Listening on port ${process.env.PORT} (in ${listentime.toFixed(1)}ms)`)
+	log(listentime, 'Fastify', 'Listening on port', process.env.PORT)
 })

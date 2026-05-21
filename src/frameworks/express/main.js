@@ -1,6 +1,7 @@
 import express from 'express'
 import db from '../../common/db'
 import { stats } from '../../common/stats'
+import { log } from '../../common/util'
 
 const app = express()
 let listentime = 0
@@ -30,5 +31,5 @@ app.get('/performance', (req, res) => res.json(stats(listentime)))
 app.listen(process.env.PORT, err => {
 	if (err) throw err
 	listentime = performance.now()
-	console.log(`[Fastify] Listening on port ${process.env.PORT} (in ${listentime.toFixed(1)}ms)`)
+	log(listentime, 'Express', 'Listening on port', process.env.PORT)
 })
